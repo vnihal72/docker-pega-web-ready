@@ -201,15 +201,24 @@ CASSANDRA_LOG_METRICS_ENABLED | Enable reporting of DDS SDK metrics to your Pega
 
 The clustering used in a Pega environment is powered by a technology called `Hazelcast`. Hazelcast can be used in an embedded mode with no additional configuration required.  Some larger deployments of more than 20 Pega containers may start to benefit from improved performance and stability of running Hazelcast in a dedicated ReplicaSet. For more information about deploying Pega with Hazelcast as an external server, see the Helm charts and the Pega Community documentation.
 
-Name 				| Purpose 		| Default
---- 				| --- 			| ---
-HZ_CLIENT_MODE | Enables client mode for infinity  | `false`
-HZ_VERSION | Hazelcast service version.  |
+Name 				| Purpose 		                                                                          | Default
+--- 				|-------------------------------------------------------------------------------------| ---
+HZ_CLIENT_MODE | Enables client mode for infinity                                                    | `false`
+HZ_VERSION | Hazelcast service version.                                                          |
 HZ_DISCOVERY_K8S | Indicates infinity client will use K8s discovery plugin to look for hazelcast nodes |
-HZ_CLUSTER_NAME| Hazelcast cluster name |
-HZ_SERVER_HOSTNAME| Hazelcast server hostname |
-HZ_CS_AUTH_USERNAME | Hazelcast username for authentication |
-HZ_CS_AUTH_PASSWORD | Hazelcast password for authentication |
+HZ_CLUSTER_NAME| Hazelcast cluster name                                                              |
+HZ_SERVER_HOSTNAME| Hazelcast server hostname                                                           |
+HZ_CS_AUTH_USERNAME | Hazelcast username for authentication                                               |
+HZ_CS_AUTH_PASSWORD | Hazelcast password for authentication                                               |
+HZ_SSL_ENABLED | Flag to enable SSL between Hazelcast and Infinity                                   | `false`
+HZ_SSL_PROTOCOL | To set SSL protocol                                                                 |
+HZ_SSL_CUSTOM_CLASS | SSL context factory class fully qualified name                                      | `com.pega.hazelcast.v5.nio.ssl.BasicSSLContextFactory`
+HZ_SSL_KEY_STORE_NAME | SSL keystore name                                                                   |
+HZ_SSL_KEYSTORE_PASSWORD | SSL keystore password | 
+HZ_SSL_ALGO | SSL algorithm name | 
+HZ_SSL_TRUST_STORE_NAME | SSL truststore name | 
+HZ_SSL_TRUSTSTORE_PASSWORD | SSL truststore password | 
+HZ_HIGH_SECURITY_ENABLED | Flag to enable Higly secured connection complying NIST SP 800-53 and NIST SP 800-131 | `false`
 
 # Contributing
 
